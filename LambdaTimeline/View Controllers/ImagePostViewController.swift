@@ -14,7 +14,7 @@ import CoreImage
 class ImagePostViewController: ShiftableViewController {
     
     
-    // Outlets
+    // MARK: - Outlets
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var chooseImageButton: UIButton!
@@ -89,7 +89,7 @@ class ImagePostViewController: ShiftableViewController {
     }
     
     @IBAction func createPost(_ sender: Any) {
-        
+    
         view.endEditing(true)
         
         guard let imageData = imageView.image?.jpegData(compressionQuality: 0.1),

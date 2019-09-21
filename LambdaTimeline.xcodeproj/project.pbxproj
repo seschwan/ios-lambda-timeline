@@ -32,6 +32,11 @@
 		E453457955DF907FCBD117F1 /* Pods_LambdaTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */; };
 		EF5B0EFC2332F16800A1421E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF5B0EFB2332F16800A1421E /* GoogleService-Info.plist */; };
 		EF5B0EFE23331DF600A1421E /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5B0EFD23331DF600A1421E /* UIImage+Scaling.swift */; };
+		EFA306B12335CE7300B92888 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA306B02335CE7300B92888 /* RecordVC.swift */; };
+		EFA306B32335D3AE00B92888 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA306B22335D3AE00B92888 /* CustomButtons.swift */; };
+		EFA306B52335DF9D00B92888 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA306B42335DF9D00B92888 /* AudioPlayer.swift */; };
+		EFA306B72335E9EE00B92888 /* piano.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFA306B62335E9EE00B92888 /* piano.mp3 */; };
+		EFA306B92335F4B600B92888 /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA306B82335F4B600B92888 /* AudioRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +69,11 @@
 		AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LambdaTimeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5B0EFB2332F16800A1421E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF5B0EFD23331DF600A1421E /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
+		EFA306B02335CE7300B92888 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
+		EFA306B22335D3AE00B92888 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
+		EFA306B42335DF9D00B92888 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		EFA306B62335E9EE00B92888 /* piano.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = piano.mp3; sourceTree = "<group>"; };
+		EFA306B82335F4B600B92888 /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				4646377B216FDE4B00E7FF73 /* AppDelegate.swift */,
+				EFA306B62335E9EE00B92888 /* piano.mp3 */,
 				46463782216FDE4C00E7FF73 /* Assets.xcassets */,
 				46463787216FDE4C00E7FF73 /* Info.plist */,
 			);
@@ -153,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				4646379B2170091A00E7FF73 /* PostController.swift */,
+				EFA306B42335DF9D00B92888 /* AudioPlayer.swift */,
+				EFA306B82335F4B600B92888 /* AudioRecorder.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 				46A0366921700F5100E7FF73 /* PostsCollectionViewController.swift */,
 				46CFE6F421707D0000E7FF73 /* ImagePostViewController.swift */,
 				46D571F72173FC2700E7FF73 /* ImagePostDetailTableViewController.swift */,
+				EFA306B02335CE7300B92888 /* RecordVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -172,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				46CFE7022171572600E7FF73 /* ImagePostCollectionViewCell.swift */,
+				EFA306B22335D3AE00B92888 /* CustomButtons.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +267,7 @@
 				TargetAttributes = {
 					46463777216FDE4B00E7FF73 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -280,6 +296,7 @@
 			files = (
 				46463786216FDE4C00E7FF73 /* LaunchScreen.storyboard in Resources */,
 				46463783216FDE4C00E7FF73 /* Assets.xcassets in Resources */,
+				EFA306B72335E9EE00B92888 /* piano.mp3 in Resources */,
 				EF5B0EFC2332F16800A1421E /* GoogleService-Info.plist in Resources */,
 				46463781216FDE4B00E7FF73 /* Main.storyboard in Resources */,
 			);
@@ -353,9 +370,11 @@
 			files = (
 				46A0366D2170158900E7FF73 /* SignInViewController.swift in Sources */,
 				EF5B0EFE23331DF600A1421E /* UIImage+Scaling.swift in Sources */,
+				EFA306B52335DF9D00B92888 /* AudioPlayer.swift in Sources */,
 				46CFE6FB21714E6100E7FF73 /* Author.swift in Sources */,
 				46CFE6F92170862C00E7FF73 /* ShiftableViewController.swift in Sources */,
 				4646377C216FDE4B00E7FF73 /* AppDelegate.swift in Sources */,
+				EFA306B92335F4B600B92888 /* AudioRecorder.swift in Sources */,
 				46CFE6FD217154F500E7FF73 /* Networking.swift in Sources */,
 				46CFE6F521707D0000E7FF73 /* ImagePostViewController.swift in Sources */,
 				46CFE6FF2171556D00E7FF73 /* ConcurrentOperation.swift in Sources */,
@@ -363,9 +382,11 @@
 				46CFE6F32170757F00E7FF73 /* User+DictionaryRepresentation.swift in Sources */,
 				46D571F32172D43B00E7FF73 /* Cache.swift in Sources */,
 				46CFE7012171559500E7FF73 /* FetchMediaOperation.swift in Sources */,
+				EFA306B32335D3AE00B92888 /* CustomButtons.swift in Sources */,
 				46D571F82173FC2700E7FF73 /* ImagePostDetailTableViewController.swift in Sources */,
 				46CFE7032171572600E7FF73 /* ImagePostCollectionViewCell.swift in Sources */,
 				4646379C2170091A00E7FF73 /* PostController.swift in Sources */,
+				EFA306B12335CE7300B92888 /* RecordVC.swift in Sources */,
 				464637992170048900E7FF73 /* FirebaseConvertible.swift in Sources */,
 				46A0366A21700F5100E7FF73 /* PostsCollectionViewController.swift in Sources */,
 				46D571F52173CF3E00E7FF73 /* UIImage+Ratio.swift in Sources */,
@@ -526,7 +547,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seschwan.lambdaTimeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -545,7 +566,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.seschwan.lambdaTimeline;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

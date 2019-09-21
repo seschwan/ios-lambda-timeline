@@ -17,13 +17,9 @@ class PostController {
         
         guard let currentUser = Auth.auth().currentUser,
             let author = Author(user: currentUser) else { return }
-        
         store(mediaData: mediaData, mediaType: mediaType) { (mediaURL) in
-            
             guard let mediaURL = mediaURL else { completion(false); return }
-            
             let imagePost = Post(title: title, mediaURL: mediaURL, ratio: ratio, author: author)
-            
             self.postsRef.childByAutoId().setValue(imagePost.dictionaryRepresentation) { (error, ref) in
                 if let error = error {
                     NSLog("Error posting image post: \(error)")
@@ -36,35 +32,29 @@ class PostController {
     }
     
     func addComment(with text: String, to post: inout Post) {
-        
         guard let currentUser = Auth.auth().currentUser,
             let author = Author(user: currentUser) else { return }
-        
         let comment = Comment(text: text, author: author)
         post.comments.append(comment)
-        
         savePostToFirebase(post)
     }
 
     func observePosts(completion: @escaping (Error?) -> Void) {
-        
         postsRef.observe(.value, with: { (snapshot) in
-            
+
             guard let postDictionaries = snapshot.value as? [String: [String: Any]] else { return }
-            
             var posts: [Post] = []
-            
             for (key, value) in postDictionaries {
-                
+    
                 guard let post = Post(dictionary: value, id: key) else { continue }
-                
+    
                 posts.append(post)
             }
-            
+
             self.posts = posts.sorted(by: { $0.timestamp > $1.timestamp })
-            
+
             completion(nil)
-            
+
         }) { (error) in
             NSLog("Error fetching posts: \(error)")
         }
