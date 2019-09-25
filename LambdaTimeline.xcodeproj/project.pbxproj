@@ -32,6 +32,8 @@
 		E453457955DF907FCBD117F1 /* Pods_LambdaTimeline.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */; };
 		EF5B0EFC2332F16800A1421E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EF5B0EFB2332F16800A1421E /* GoogleService-Info.plist */; };
 		EF5B0EFE23331DF600A1421E /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5B0EFD23331DF600A1421E /* UIImage+Scaling.swift */; };
+		EF8EAD11233AFFF4001187BF /* CameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EAD10233AFFF4001187BF /* CameraPreviewView.swift */; };
+		EF8EAD13233B005D001187BF /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8EAD12233B005D001187BF /* CameraVC.swift */; };
 		EFA306B12335CE7300B92888 /* RecordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA306B02335CE7300B92888 /* RecordVC.swift */; };
 		EFA306B32335D3AE00B92888 /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA306B22335D3AE00B92888 /* CustomButtons.swift */; };
 		EFA306B52335DF9D00B92888 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA306B42335DF9D00B92888 /* AudioPlayer.swift */; };
@@ -69,6 +71,8 @@
 		AA39CACB677861CF84322FB5 /* Pods_LambdaTimeline.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LambdaTimeline.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5B0EFB2332F16800A1421E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EF5B0EFD23331DF600A1421E /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
+		EF8EAD10233AFFF4001187BF /* CameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPreviewView.swift; sourceTree = "<group>"; };
+		EF8EAD12233B005D001187BF /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
 		EFA306B02335CE7300B92888 /* RecordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordVC.swift; sourceTree = "<group>"; };
 		EFA306B22335D3AE00B92888 /* CustomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		EFA306B42335DF9D00B92888 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 				46CFE6F421707D0000E7FF73 /* ImagePostViewController.swift */,
 				46D571F72173FC2700E7FF73 /* ImagePostDetailTableViewController.swift */,
 				EFA306B02335CE7300B92888 /* RecordVC.swift */,
+				EF8EAD12233B005D001187BF /* CameraVC.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 			children = (
 				46CFE7022171572600E7FF73 /* ImagePostCollectionViewCell.swift */,
 				EFA306B22335D3AE00B92888 /* CustomButtons.swift */,
+				EF8EAD10233AFFF4001187BF /* CameraPreviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -390,6 +396,8 @@
 				464637992170048900E7FF73 /* FirebaseConvertible.swift in Sources */,
 				46A0366A21700F5100E7FF73 /* PostsCollectionViewController.swift in Sources */,
 				46D571F52173CF3E00E7FF73 /* UIImage+Ratio.swift in Sources */,
+				EF8EAD11233AFFF4001187BF /* CameraPreviewView.swift in Sources */,
+				EF8EAD13233B005D001187BF /* CameraVC.swift in Sources */,
 				46463792216FFDD900E7FF73 /* Comment.swift in Sources */,
 				46CFE6F721707FA600E7FF73 /* UIViewController+InformationalAlert.swift in Sources */,
 			);

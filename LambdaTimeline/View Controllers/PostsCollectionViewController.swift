@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseUI
+import AVFoundation
 
 class PostsCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -30,13 +31,48 @@ class PostsCollectionViewController: UICollectionViewController, UICollectionVie
             self.performSegue(withIdentifier: "AddImagePost", sender: nil)
         }
         
+        // TODO: - Add a video action here that takes you to the VideoVC.
+        let videoPostAction = UIAlertAction(title: "Video", style: .default) { (_) in
+            self.loadCamera()
+        }
+        
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
         alert.addAction(imagePostAction)
+        alert.addAction(videoPostAction)
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func loadCamera() {
+        
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            self.showCamera()
+        case .notDetermined :
+            AVCaptureDevice.requestAccess(for: .video) { (granted) in
+                if granted {
+                    DispatchQueue.main.async {
+                        // Show Camera
+                        self.showCamera()
+                    }
+                }
+            }
+        case .denied:
+            return
+        case .restricted:
+            return
+        @unknown default:
+            return
+        }
+    }
+    
+    private func showCamera() {
+        performSegue(withIdentifier: "ToVideoVC", sender: self)
+    }
+    
+    
     
     // MARK: UICollectionViewDataSource
     

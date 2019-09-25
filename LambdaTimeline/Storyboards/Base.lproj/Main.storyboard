@@ -97,6 +97,7 @@
                     <connections>
                         <segue destination="1Aw-4e-BW2" kind="show" identifier="AddImagePost" id="jaI-fq-Woc"/>
                         <segue destination="OyM-8q-Icp" kind="show" identifier="ViewImagePost" id="hhs-es-AdQ"/>
+                        <segue destination="XU6-hT-7xT" kind="show" identifier="ToVideoVC" id="dfh-4j-yyA"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRz-lg-pQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -164,9 +165,9 @@
                                                             </label>
                                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="3zN-Dn-cm5">
                                                                 <rect key="frame" x="88" y="0.0" width="328" height="31"/>
-                                                                <color key="minimumTrackTintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <color key="maximumTrackTintColor" red="0.077396027739999998" green="0.19809195399999999" blue="0.96084636450000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                                <color key="thumbTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="minimumTrackTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="maximumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <connections>
                                                                     <action selector="intensityChanged:" destination="1Aw-4e-BW2" eventType="valueChanged" id="fSt-AL-X4Q"/>
                                                                 </connections>
@@ -225,6 +226,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXa-A2-VJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1968.1159420289857" y="-195.53571428571428"/>
+        </scene>
+        <!--CameraVC-->
+        <scene sceneID="Pep-z7-BGw">
+            <objects>
+                <viewController id="XU6-hT-7xT" customClass="CameraVC" customModule="LambdaTimeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eXh-Or-HdL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-NE-XIA" customClass="CameraPreviewView" customModule="LambdaTimeline" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-ZX-7z2">
+                                        <rect key="frame" x="175" y="659" width="65" height="65"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="3eW-QU-bcU"/>
+                                            <constraint firstAttribute="height" constant="65" id="AtN-FS-y2o"/>
+                                        </constraints>
+                                        <state key="normal" image="Record"/>
+                                        <connections>
+                                            <action selector="recordBtnPressed:" destination="XU6-hT-7xT" eventType="touchUpInside" id="O6G-be-jzU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3A-AL-nXB">
+                                        <rect key="frame" x="327" y="677" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="Kca-3d-i8d"/>
+                                            <constraint firstAttribute="height" constant="25" id="xfr-JI-Ur8"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="camera.rotate" catalog="system"/>
+                                        <connections>
+                                            <action selector="flipCameraBtnPressed:" destination="XU6-hT-7xT" eventType="touchUpInside" id="rxY-EA-7fj"/>
+                                            <segue destination="XU6-hT-7xT" kind="showDetail" identifier="ToFrontCamera" id="q99-RB-d6z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="P3A-AL-nXB" secondAttribute="bottom" constant="72" id="B0g-Zf-kf2"/>
+                                    <constraint firstItem="P3A-AL-nXB" firstAttribute="leading" secondItem="gMM-ZX-7z2" secondAttribute="trailing" constant="87" id="Q6p-hh-FgC"/>
+                                    <constraint firstItem="gMM-ZX-7z2" firstAttribute="leading" secondItem="0Pg-NE-XIA" secondAttribute="leading" constant="175" id="RI4-Be-EdE"/>
+                                    <constraint firstAttribute="bottom" secondItem="gMM-ZX-7z2" secondAttribute="bottom" constant="50" id="U0a-EW-kcA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="M5R-lz-zKn" firstAttribute="trailing" secondItem="0Pg-NE-XIA" secondAttribute="trailing" id="MW6-Qx-rV5"/>
+                            <constraint firstItem="0Pg-NE-XIA" firstAttribute="leading" secondItem="M5R-lz-zKn" secondAttribute="leading" id="RXa-z4-o96"/>
+                            <constraint firstItem="0Pg-NE-XIA" firstAttribute="top" secondItem="M5R-lz-zKn" secondAttribute="top" id="t1z-xc-Urz"/>
+                            <constraint firstItem="M5R-lz-zKn" firstAttribute="bottom" secondItem="0Pg-NE-XIA" secondAttribute="bottom" id="uzR-Gn-gCE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="M5R-lz-zKn"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NuV-Vm-Nh2"/>
+                    <connections>
+                        <outlet property="cameraPreviewView" destination="0Pg-NE-XIA" id="S5s-yp-LiR"/>
+                        <outlet property="flipCameraButton" destination="P3A-AL-nXB" id="zcD-tM-qSI"/>
+                        <outlet property="recordBtn" destination="gMM-ZX-7z2" id="1Zd-H4-gme"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jO6-7R-dY0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2697" y="-216"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gdW-Je-ais">
@@ -498,4 +564,8 @@
             <point key="canvasLocation" x="2672.4637681159425" y="469.41964285714283"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Record" width="300" height="300"/>
+        <image name="camera.rotate" catalog="system" width="64" height="48"/>
+    </resources>
 </document>
