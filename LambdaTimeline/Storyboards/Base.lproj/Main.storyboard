@@ -102,7 +102,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WRz-lg-pQU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1216.8" y="108.39580209895054"/>
+            <point key="canvasLocation" x="1894" y="211"/>
         </scene>
         <!--Title-->
         <scene sceneID="kP9-yp-I8H">
@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qd-If-ddw">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PkI-rS-ua9">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="529"/>
@@ -225,7 +225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXa-A2-VJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968.1159420289857" y="-195.53571428571428"/>
+            <point key="canvasLocation" x="2672" y="-200"/>
         </scene>
         <!--CameraVC-->
         <scene sceneID="Pep-z7-BGw">
@@ -236,21 +236,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Pg-NE-XIA" customClass="CameraPreviewView" customModule="LambdaTimeline" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMM-ZX-7z2">
-                                        <rect key="frame" x="175" y="659" width="65" height="65"/>
+                                        <rect key="frame" x="175" y="610" width="65" height="65"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="65" id="3eW-QU-bcU"/>
                                             <constraint firstAttribute="height" constant="65" id="AtN-FS-y2o"/>
                                         </constraints>
+                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="Record"/>
                                         <connections>
                                             <action selector="recordBtnPressed:" destination="XU6-hT-7xT" eventType="touchUpInside" id="O6G-be-jzU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P3A-AL-nXB">
-                                        <rect key="frame" x="327" y="677" width="25" height="25"/>
+                                        <rect key="frame" x="327" y="628" width="25" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="25" id="Kca-3d-i8d"/>
                                             <constraint firstAttribute="height" constant="25" id="xfr-JI-Ur8"/>
@@ -290,12 +291,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jO6-7R-dY0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2697" y="-216"/>
+            <point key="canvasLocation" x="3445" y="-200"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Locations-->
+        <scene sceneID="sEA-sM-ykM">
+            <objects>
+                <viewController id="UjF-Pg-a5a" customClass="MapVC" customModule="LambdaTimeline" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ly-MQ-vFk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="goh-VW-7cS">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0yc-l4-8BF">
+                                <rect key="frame" x="67.5" y="64" width="279" height="32"/>
+                                <segments>
+                                    <segment title="Map"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Flyover"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeChanged:" destination="UjF-Pg-a5a" eventType="valueChanged" id="dfZ-wa-Zab"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0yc-l4-8BF" firstAttribute="centerX" secondItem="4ly-MQ-vFk" secondAttribute="centerX" id="0Vs-mf-3xA"/>
+                            <constraint firstItem="9WQ-gH-aHn" firstAttribute="bottom" secondItem="goh-VW-7cS" secondAttribute="bottom" id="Oea-cy-i9I"/>
+                            <constraint firstItem="goh-VW-7cS" firstAttribute="top" secondItem="9WQ-gH-aHn" secondAttribute="top" id="UP6-VY-00d"/>
+                            <constraint firstItem="9WQ-gH-aHn" firstAttribute="trailing" secondItem="goh-VW-7cS" secondAttribute="trailing" id="ZD9-al-yg9"/>
+                            <constraint firstItem="0yc-l4-8BF" firstAttribute="top" secondItem="9WQ-gH-aHn" secondAttribute="top" constant="20" id="ttC-Cn-3qc"/>
+                            <constraint firstItem="goh-VW-7cS" firstAttribute="leading" secondItem="9WQ-gH-aHn" secondAttribute="leading" id="xlC-6O-b9O"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9WQ-gH-aHn"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Locations" image="mappin.and.ellipse" catalog="system" selectedImage="mappin.and.ellipse" id="d1f-kz-09Z">
+                        <color key="badgeColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="X3b-9j-Rbf"/>
+                    <connections>
+                        <outlet property="mapTypeSegmentPicker" destination="0yc-l4-8BF" id="tBz-55-FtK"/>
+                        <outlet property="mapView" destination="goh-VW-7cS" id="HZM-Pa-rIv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zW8-Fr-Gxb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1122" y="-220"/>
+        </scene>
+        <!--Posts-->
         <scene sceneID="gdW-Je-ais">
             <objects>
                 <navigationController storyboardIdentifier="PostsNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="ohA-ly-1Yj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Posts" image="square.split.1x2" catalog="system" selectedImage="square.split.1x2" springLoaded="YES" id="2aj-4h-uuj"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XJY-X6-mEY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -308,7 +358,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFJ-OO-MVi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="277.60000000000002" y="108.39580209895054"/>
+            <point key="canvasLocation" x="1122" y="437"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="O74-ZV-TrY">
@@ -345,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xA4-1f-Wlf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-450.39999999999998" y="107.49625187406298"/>
+            <point key="canvasLocation" x="-448" y="108"/>
         </scene>
         <!--Title-->
         <scene sceneID="9zi-Aq-zJI">
@@ -447,7 +497,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CdL-Y3-4ej" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968.8" y="472.71364317841085"/>
+            <point key="canvasLocation" x="2671" y="490"/>
         </scene>
         <!--RecordVC-->
         <scene sceneID="vMn-RT-cdk">
@@ -462,7 +512,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBl-9b-ggp" customClass="CustomButton" customModule="LambdaTimeline" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="96" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Record">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -472,7 +522,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbW-u7-StD" customClass="CustomButton" customModule="LambdaTimeline" customModuleProvider="target">
                                         <rect key="frame" x="134" y="0.0" width="96" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Play">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -483,7 +533,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPn-Ko-pmp" customClass="CustomButton" customModule="LambdaTimeline" customModuleProvider="target">
                                         <rect key="frame" x="268" y="0.0" width="96" height="30"/>
-                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Stop">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -532,7 +582,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="NCL-Jq-evp"/>
                                 </constraints>
-                                <color key="progressTintColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="progressTintColor" systemColor="systemPurpleColor" red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -561,11 +611,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OU-Td-raA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="fgI-kd-t6W" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2672.4637681159425" y="469.41964285714283"/>
+            <point key="canvasLocation" x="3446" y="490"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Gbl-KC-uag">
+            <objects>
+                <tabBarController storyboardIdentifier="PostsTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="Rtb-fW-4De" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pDc-S0-873">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ohA-ly-1Yj" kind="relationship" relationship="viewControllers" id="Ge8-mv-RUx"/>
+                        <segue destination="UjF-Pg-a5a" kind="relationship" relationship="viewControllers" id="RX7-jA-zrp"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WZx-Ks-qpv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276.81159420289856" y="107.8125"/>
         </scene>
     </scenes>
     <resources>
         <image name="Record" width="300" height="300"/>
         <image name="camera.rotate" catalog="system" width="64" height="48"/>
+        <image name="mappin.and.ellipse" catalog="system" width="62" height="64"/>
+        <image name="square.split.1x2" catalog="system" width="64" height="56"/>
     </resources>
 </document>
